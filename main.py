@@ -123,6 +123,7 @@ try:
                         "creationTime": creationTime,
                         # Calculate total time spent and use divmod on timedelta object with 60 to get (min's, sec's)[0] -> Take only the minutes
                         "timeSpentOnWork": divmod((datetime.datetime.now() - datetime.datetime.strptime(creationTime, "%d-%m-%Y %H:%M:%S")).total_seconds(), 60)[0],
+                        "category": key
                     }
 
         monitored += 1
@@ -144,6 +145,7 @@ try:
                     continue
                 monitor[key]["appName"] = appNames[key]
                 monitor[key]["appIcon"] = appIcons[appNames[key]]
+                
             monitor["lastUpdated"] = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
             json.dump(monitor, file)
 
