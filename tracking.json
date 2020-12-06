@@ -1,0 +1,21 @@
+{
+    "Code.exe": {
+        "creationTime": "06-12-2020 18:07:02",
+        "timeSpentOnWork": 68.0,
+        "appName": "VS Code",
+        "appIcon": "https://img.icons8.com/color/96/000000/visual-studio-code-2019.png"
+    },
+    "chrome.exe": {
+        "creationTime": "06-12-2020 18:48:02",
+        "timeSpentOnWork": 27.0,
+        "appName": "Chrome",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/chrome.png"
+    },
+    "vim.exe": {
+        "creationTime": "06-12-2020 19:09:05",
+        "timeSpentOnWork": 6.0,
+        "appName": "Vim",
+        "appIcon": "https://symbols.getvecta.com/stencil_100/36_vim-icon.10adf6f02d.png"
+    },
+    "lastUpdated": "06-12-2020 19:15:18"
+}
