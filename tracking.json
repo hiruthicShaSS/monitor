@@ -1,10 +1,45 @@
 {
     "Code.exe": {
         "creationTime": "06-12-2020 20:16:03",
-        "timeSpentOnWork": 28.0,
+        "timeSpentOnWork": 40.0,
         "category": "Work",
         "appName": "VS Code",
         "appIcon": "https://img.icons8.com/color/96/000000/visual-studio-code-2019.png"
     },
-    "lastUpdated": "06-12-2020 20:44:39"
+    "lastUpdated": "06-12-2020 20:56:35",
+    "chrome.exe": {
+        "creationTime": "06-12-2020 20:47:05",
+        "timeSpentOnWork": 9.0,
+        "category": "Work",
+        "appName": "Chrome",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/chrome.png"
+    },
+    "msedge.exe": {
+        "creationTime": "06-12-2020 20:48:00",
+        "timeSpentOnWork": 8.0,
+        "category": "Work",
+        "appName": "MS Edge",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/ms-edge-new.png"
+    },
+    "vim.exe": {
+        "creationTime": "06-12-2020 20:48:01",
+        "timeSpentOnWork": 8.0,
+        "category": "Work",
+        "appName": "Vim",
+        "appIcon": "https://symbols.getvecta.com/stencil_100/36_vim-icon.10adf6f02d.png"
+    },
+    "nvim.exe": {
+        "creationTime": "06-12-2020 20:48:02",
+        "timeSpentOnWork": 8.0,
+        "category": "Work",
+        "appName": "NeoVim",
+        "appIcon": "https://symbols.getvecta.com/stencil_89/33_neovim-icon.fe408f504a.png"
+    },
+    "VALORANT.exe": {
+        "creationTime": "06-12-2020 20:51:05",
+        "timeSpentOnWork": 5.0,
+        "category": "Fun",
+        "appName": "VALORANT",
+        "appIcon": "https://img.icons8.com/color/96/000000/valorant.png"
+    }
 }
