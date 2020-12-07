@@ -28,12 +28,6 @@ dependencies:
   pie_chart: ^4.0.1
   device_info: ^1.0.0
   crypto: ^2.1.5
-  google_drive_client: ^1.0.3  # remove me later
-  # google_sign_in: ^4.1.0  
-  # flutter_secure_storage: ^3.3.1+1  
-  # googleapis: ^0.54.0  
-  # googleapis_auth: ^0.2.11  
-  # path_provider: ^1.5.1  
 
 
   # The following adds the Cupertino Icons font to your application.

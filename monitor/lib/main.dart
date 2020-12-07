@@ -5,10 +5,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:monitor/chart.dart';
 import 'package:device_info/device_info.dart';
 import 'package:crypto/crypto.dart';
-// import 'package:google_drive_client/google_drive_client.dart';
+
+import 'package:monitor/chart.dart';
+import 'package:monitor/chart.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double timeSpentOnWork = 0.0, timeSpentOnFun = 0.0;
 
   List<String> apps = new List();
+  List<HexColor> appColors = new List();
   List<String> category = new List();
   List<double> timeSpent = new List();
   List<String> creationTime = new List();
@@ -82,6 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Widget> _buildChildren() {
       // Clear the existing array
       apps.clear();
+      appColors.clear();
+      category.clear();
       timeSpent.clear();
       creationTime.clear();
       icons.clear();
@@ -90,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
       data.forEach((key, value) {
         if (key != "lastUpdated") {
           apps.add(value["appName"]);
+          appColors.add(HexColor(value["appColor"]));
           category.add(value["category"]);
           timeSpent.add(value["timeSpentOnWork"]);
           creationTime.add(value["creationTime"]);
@@ -242,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    Plotter(apps: apps, timeSpent: timeSpent)),
+                    Plotter(apps: apps, timeSpent: timeSpentappColors: appColors,)),
           );
         },
         tooltip: 'Plot graph',

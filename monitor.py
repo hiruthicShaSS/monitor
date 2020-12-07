@@ -4,9 +4,28 @@ import time
 import json
 import re
 
+<<<<<<< HEAD
+drive = None
+def upload():
+    tracking = drive.CreateFile({"title": "tracking.json", 'mimeType':'application/json', "id": "1PHdJYxWWb7SrudjOeIDiDvK-gGE1JPvY"})
+    tracking_content = tracking.GetContentString()
+    lines = str()
+    for line in open("tracking.json", "r").readlines():
+        lines += line
+    tracking_content = lines
+    tracking.SetContentString(tracking_content)
+    tracking.Upload()
+    tracking = None  
+
+# Core stuff
+def monitor(data):
+    global drive
+    track, appsToMonitor, appNames, appIcons, appColors, timeout, uploadPerEpoch, drive = data
+=======
 
 # Core stuff
 def monitor(track, appsToMonitor, appNames, appIcons, timeout):
+>>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
     try:
         monitored = 0  # Iteration of monitor's
         while True:
@@ -59,11 +78,23 @@ def monitor(track, appsToMonitor, appNames, appIcons, timeout):
                         continue
                     track[key]["appName"] = appNames[key]
                     track[key]["appIcon"] = appIcons[appNames[key]]
+<<<<<<< HEAD
+                    track[key]["appColor"] = appColors[appNames[key]]
+=======
+>>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
 
                 track["lastUpdated"] = datetime.datetime.now().strftime(
                     "%d-%m-%Y %H:%M:%S")
                 json.dump(track, file)
 
+<<<<<<< HEAD
+            if monitored % uploadPerEpoch == 0:
+                print("Epoch completed, Uploading...", end=" ")
+                upload()
+                print("Done.")
+
+=======
+>>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
             time.sleep(timeout)
     except KeyboardInterrupt:
         return

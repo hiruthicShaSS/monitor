@@ -1,1 +1,71 @@
+<<<<<<< HEAD
+{
+    "Code.exe": {
+        "creationTime": "07-12-2020 19:29:05",
+        "timeSpentOnWork": 11.0,
+        "category": "Work",
+        "appName": "VS Code",
+        "appIcon": "https://img.icons8.com/color/96/000000/visual-studio-code-2019.png",
+        "appColor": "#4ED479"
+    },
+    "lastUpdated": "07-12-2020 19:40:34",
+    "chrome.exe": {
+        "creationTime": "07-12-2020 19:40:00",
+        "timeSpentOnWork": 0.0,
+        "category": "Work",
+        "appName": "Chrome",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/chrome.png",
+        "appColor": "#B18F27"
+    },
+    "msedge.exe": {
+        "creationTime": "06-12-2020 20:48:00",
+        "timeSpentOnWork": 8.0,
+        "category": "Work",
+        "appName": "MS Edge",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/ms-edge-new.png",
+        "appColor": "#23ABF2"
+    },
+    "vim.exe": {
+        "creationTime": "06-12-2020 20:48:01",
+        "timeSpentOnWork": 8.0,
+        "category": "Work",
+        "appName": "Vim",
+        "appIcon": "https://symbols.getvecta.com/stencil_100/36_vim-icon.10adf6f02d.png",
+        "appColor": "#C0C0C0"
+    },
+    "nvim.exe": {
+        "creationTime": "06-12-2020 20:48:02",
+        "timeSpentOnWork": 8.0,
+        "category": "Work",
+        "appName": "NeoVim",
+        "appIcon": "https://symbols.getvecta.com/stencil_89/33_neovim-icon.fe408f504a.png",
+        "appColor": "#66B459"
+    },
+    "VALORANT.exe": {
+        "creationTime": "07-12-2020 12:20:01",
+        "timeSpentOnWork": 104.0,
+        "category": "Fun",
+        "appName": "VALORANT",
+        "appIcon": "https://img.icons8.com/color/96/000000/valorant.png",
+        "appColor": "#FD4553"
+    },
+    "Spotify.exe": {
+        "creationTime": "07-12-2020 14:17:00",
+        "timeSpentOnWork": 136.0,
+        "category": "Work",
+        "appName": "Spotify",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/spotify.png",
+        "appColor": "#138A3D"
+    },
+    "Photoshop.exe": {
+        "creationTime": "07-12-2020 18:57:00",
+        "timeSpentOnWork": 25.0,
+        "category": "Work",
+        "appName": "Photoshop",
+        "appIcon": "https://img.icons8.com/fluent/96/000000/adobe-photoshop.png",
+        "appColor": "#007498"
+    }
+}
+=======
 {"Code.exe": {"creationTime": "07-12-2020 14:17:05", "timeSpentOnWork": 94.0, "category": "Work", "appName": "VS Code", "appIcon": "https://img.icons8.com/color/96/000000/visual-studio-code-2019.png"}, "lastUpdated": "07-12-2020 15:51:18", "chrome.exe": {"creationTime": "07-12-2020 14:24:04", "timeSpentOnWork": 87.0, "category": "Work", "appName": "Chrome", "appIcon": "https://img.icons8.com/fluent/96/000000/chrome.png"}, "msedge.exe": {"creationTime": "06-12-2020 20:48:00", "timeSpentOnWork": 8.0, "category": "Work", "appName": "MS Edge", "appIcon": "https://img.icons8.com/fluent/96/000000/ms-edge-new.png"}, "vim.exe": {"creationTime": "06-12-2020 20:48:01", "timeSpentOnWork": 8.0, "category": "Work", "appName": "Vim", "appIcon": "https://symbols.getvecta.com/stencil_100/36_vim-icon.10adf6f02d.png"}, "nvim.exe": {"creationTime": "06-12-2020 20:48:02", "timeSpentOnWork": 8.0, "category": "Work", "appName": "NeoVim", "appIcon": "https://symbols.getvecta.com/stencil_89/33_neovim-icon.fe408f504a.png"}, "VALORANT.exe": {"creationTime": "07-12-2020 12:20:01", "timeSpentOnWork": 104.0, "category": "Fun", "appName": "VALORANT", "appIcon": "https://img.icons8.com/color/96/000000/valorant.png"}, "Spotify.exe": {"creationTime": "07-12-2020 14:17:00", "timeSpentOnWork": 94.0, "category": "Work", "appName": "Spotify", "appIcon": "https://img.icons8.com/fluent/96/000000/spotify.png"}}
+>>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774

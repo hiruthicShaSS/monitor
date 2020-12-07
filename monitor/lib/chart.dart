@@ -4,7 +4,12 @@ import 'package:pie_chart/pie_chart.dart';
 class Plotter extends StatefulWidget {
   final List apps;
   final List timeSpent;
-  Plotter({Key key, @required this.apps, @required this.timeSpent})
+  final List appColors;
+  Plotter(
+      {Key key,
+      @required this.apps,
+      @required this.timeSpent,
+      @required this.appColors})
       : super(key: key);
 
   @override
@@ -24,38 +29,42 @@ class _PlotterState extends State<Plotter> {
         title: Text("Graph"),
         centerTitle: true,
       ),
-      body: (dataMap.isEmpty) ? Container(child: Text("No data available."),) : Container(
-        child: Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: Container(
-            alignment: Alignment.center,
-            child: PieChart(
-              dataMap: dataMap,
-              animationDuration: Duration(seconds: 1),
-              chartLegendSpacing: 32,
-              chartRadius: MediaQuery.of(context).size.width / 1.2,
-              // colorList: [],
-              initialAngleInDegree: 0,
-              chartType: ChartType.ring,
-              ringStrokeWidth: 32,
-              centerText: "App Usage",
-              legendOptions: LegendOptions(
-                showLegendsInRow: false,
-                legendPosition: LegendPosition.bottom,
-                showLegends: true,
-                legendTextStyle:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-              ),
-              chartValuesOptions: ChartValuesOptions(
-                showChartValueBackground: true,
-                showChartValues: true,
-                showChartValuesInPercentage: false,
-                showChartValuesOutside: false,
+      body: (dataMap.isEmpty)
+          ? Container(
+              child: Text("No data available."),
+            )
+          : Container(
+              child: Padding(
+                padding: const EdgeInsets.all(1.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  child: PieChart(
+                    dataMap: dataMap,
+                    animationDuration: Duration(seconds: 1),
+                    chartLegendSpacing: 32,
+                    chartRadius: MediaQuery.of(context).size.width / 1.2,
+                    colorList: widget.appColors,
+                    initialAngleInDegree: 0,
+                    chartType: ChartType.ring,
+                    ringStrokeWidth: 32,
+                    centerText: "App Usage",
+                    legendOptions: LegendOptions(
+                      showLegendsInRow: false,
+                      legendPosition: LegendPosition.bottom,
+                      showLegends: true,
+                      legendTextStyle: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20.0),
+                    ),
+                    chartValuesOptions: ChartValuesOptions(
+                      showChartValueBackground: true,
+                      showChartValues: true,
+                      showChartValuesInPercentage: false,
+                      showChartValuesOutside: false,
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }

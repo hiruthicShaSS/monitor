@@ -23,6 +23,10 @@ appNames = None
 appColors = None
 appIcons = None
 timeout = 0
+<<<<<<< HEAD
+uploadPerEpoch = 1
+=======
+>>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
 track = {}
 
 def plot():
@@ -80,6 +84,44 @@ def exit_handler(sig=None):
 atexit.register(exit_handler)
 # win32api.SetConsoleCtrlHandler(exit_handler)
 
+def upload():
+    tracking = drive.CreateFile({"title": "tracking.json", 'mimeType':'application/json', "id": "1PHdJYxWWb7SrudjOeIDiDvK-gGE1JPvY"})
+    tracking_content = tracking.GetContentString()
+    lines = str()
+    for line in open("tracking.json", "r").readlines():
+        lines += line
+    tracking_content = lines
+    tracking.SetContentString(tracking_content)
+    tracking.Upload()
+    tracking = None  
+
+def exit_handler(sig=None):
+    if not args.visualize:  # Write data
+        print("Writing to file...", end=" ")
+        with open("tracking.json", "w+") as file:
+            for key in track.keys():
+                if key == "lastUpdated":
+                    continue
+                track[key]["appName"] = appNames[key]
+                track[key]["appIcon"] = appIcons[appNames[key]]
+            json.dump(track, file)
+        print("Done")
+    
+    if not args.no_upload and not args.visualize:  # Upload file to Google Drive
+        print("Uploading file...", end=" ")
+        # file = {'file': open("tracking.json", 'rb')}
+        # data = requests.post("https://toxic-cat.herokuapp.com/upload?pass=sha", files=file)
+        # if data.status_code == 200:
+        #     print("Done.")
+        # else:
+        #     print(f"Error: {data.status_code} - {data.reason}")
+        upload()
+        print("Done.")
+    return
+
+atexit.register(exit_handler)
+# win32api.SetConsoleCtrlHandler(exit_handler)
+
 if args.visualize == True:
     print("Reading data and config...", end=" ")
     with open("config.json", "r") as file:  # Read the settings from config.json
@@ -97,6 +139,38 @@ else:
     if not args.no_upload:  # If no objection on upload, login with OAuth
         gauth = GoogleAuth()
         gauth.LocalWebserverAuth()
+<<<<<<< HEAD
+
+        drive = GoogleDrive(gauth)
+
+    print("Reading config...", end=" ")
+    with open("config.json", "r") as file:  # Read the settings from config.json
+        jsonImported = json.loads(file.read())
+        appsToMonitor = jsonImported["monitorApps"]
+        appNames = jsonImported["appNames"]
+        appColors = jsonImported["appColors"]
+        appIcons = jsonImported["appIcons"]
+        timeout = jsonImported["refreshTime"]
+        uploadPerEpoch = jsonImported["uploadPerEpoch"]
+        print("Done.")
+        print(f"Refresh rate: {timeout}, Upload interval: {uploadPerEpoch}")
+
+    print("Populating data (if exist)", end=" ")
+    with open("tracking.json", "r") as file:  # Populate existing data is exist
+        try: 
+            track = json.load(file)
+            print("Done.")
+        except: pass
+
+    print("Monitoring: ")
+    data = [track, appsToMonitor, appNames, appIcons, appColors, timeout, uploadPerEpoch, drive]
+    mon_mod.monitor(data)  # Start monitoring
+    plot()  # Plot it
+
+
+# print(track)
+
+=======
 
         drive = GoogleDrive(gauth)
 
@@ -120,3 +194,4 @@ else:
 
 
 # print(track)
+>>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
