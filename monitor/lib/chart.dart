@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 import 'package:pie_chart/pie_chart.dart';
 
 class Plotter extends StatefulWidget {
-  List apps;
-  List timeSpent;
+  final List apps;
+  final List timeSpent;
   Plotter({Key key, @required this.apps, @required this.timeSpent})
       : super(key: key);
 

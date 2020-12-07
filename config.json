@@ -9,7 +9,8 @@
             "msedge.exe",
             "chrome.exe",
             "Pro.exe",
-            "Photoshop.exe"
+            "Photoshop.exe",
+            "Spotify.exe"
         ],
         "Fun": ["VALORANT.exe"]
     },
@@ -23,7 +24,8 @@
         "chrome.exe": "Chrome",
         "Pro.exe": "Premier Pro",
         "Photoshop.exe": "Photoshop",
-        "VALORANT.exe": "VALORANT"
+        "VALORANT.exe": "VALORANT",
+        "Spotify.exe": "Spotify"
     },
     "appColors": {
         "VS Code": "#4ED479",
@@ -34,7 +36,8 @@
         "Chrome": "#B18F27",
         "Premier Pro": "#B656CE",
         "Photoshop": "#007498",
-        "VALORANT": "#FD4553"
+        "VALORANT": "#FD4553",
+        "Spotify": "#138A3D"
     },
     "appIcons": {
         "VS Code": "https://img.icons8.com/color/96/000000/visual-studio-code-2019.png",
@@ -45,7 +48,8 @@
         "Chrome": "https://img.icons8.com/fluent/96/000000/chrome.png",
         "Premier Pro": "https://img.icons8.com/color/96/000000/adobe-premiere-pro.png",
         "Photoshop": "https://img.icons8.com/fluent/96/000000/adobe-photoshop.png",
-        "VALORANT": "https://img.icons8.com/color/96/000000/valorant.png"
+        "VALORANT": "https://img.icons8.com/color/96/000000/valorant.png",
+        "Spotify": "https://img.icons8.com/fluent/96/000000/spotify.png"
     },
     "refreshTime": 2
 }

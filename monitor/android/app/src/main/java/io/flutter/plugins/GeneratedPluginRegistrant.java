@@ -14,5 +14,6 @@ import io.flutter.embedding.engine.FlutterEngine;
 public final class GeneratedPluginRegistrant {
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     flutterEngine.getPlugins().add(new io.flutter.plugins.deviceinfo.DeviceInfoPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());
   }
 }

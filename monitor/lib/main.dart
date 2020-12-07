@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:monitor/chart.dart';
 import 'package:device_info/device_info.dart';
 import 'package:crypto/crypto.dart';
+// import 'package:google_drive_client/google_drive_client.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,7 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static const String URL = "https://toxic-cat.herokuapp.com/";
+  // static const String URL = "https://toxic-cat.herokuapp.com/";
   Map data = new Map();
   double timeSpentOnWork = 0.0, timeSpentOnFun = 0.0;
 
@@ -49,9 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _status = Text("Fetching...");
 
   Future<Map> getData() async {
-    var response = await http.get('${URL}download?file=tracking.json&pass=sha');
+    // var response = await http.get('${URL}download?file=tracking.json&pass=sha');
+    // final Map data = jsonDecode(response.body);
+    // // print(data);
+    // return data;
+
+    var response = await http.get(
+        "https://drive.google.com/uc?export=download&id=1PHdJYxWWb7SrudjOeIDiDvK-gGE1JPvY");
     final Map data = jsonDecode(response.body);
-    // print(data);
+
     return data;
   }
 
@@ -62,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
         "${androidInfo.androidId} ${androidInfo.board} ${androidInfo.brand} ${androidInfo.device} ${androidInfo.display} ${androidInfo.hardware} ${androidInfo.manufacturer} ${androidInfo.model} ${androidInfo.product}";
     var deviceBytes = utf8.encode(device);
     var deviceDigest = sha512.convert(deviceBytes);
-    print(androidInfo.androidId);
+
     if (deviceDigest.toString() !=
         "3b101badaa76a5a019478f03ba711ebb9ece838b73698a3983f857c0019e68de3b90aa82207cd1a1dd91752396df6824b5d5deca9bb9bb736fe8d524d1a567dd") {
       exit(-1);
@@ -80,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
       icons.clear();
 
       // Populate the array with new data from server
-      data["data"].forEach((key, value) {
+      data.forEach((key, value) {
         if (key != "lastUpdated") {
           apps.add(value["appName"]);
           category.add(value["category"]);
@@ -89,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
           icons[value["appName"]] = value["appIcon"];
         }
       });
-      
+
       int work = 0, fun = 0;
-      for (int i=0; i<apps.length; i++) {
+      for (int i = 0; i < apps.length; i++) {
         if (category[i] == "Work") {
           work++;
           timeSpentOnWork += timeSpent[i];
@@ -147,22 +154,13 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     data = await getData();
-    if (data["code"] == 404) {
-      setState(() {
-        _status = Text(data["message"]);
-      });
 
-      // Scaffold.of(context).showSnackBar(SnackBar(
-      //   content: Text(data["message"]),
-      // ));
-    } else {
-      setState(() {
-        _status = Text("Fetching...");
-        _status = Column(
-          children: _buildChildren(),
-        );
-      });
-    }
+    setState(() {
+      _status = Text("Fetching...");
+      _status = Column(
+        children: _buildChildren(),
+      );
+    });
   }
 
   @override
@@ -191,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          (data["code"] == 404) ? Container() : Container(
+          Container(
             color: Colors.red,
             height: MediaQuery.of(context).size.height / 10,
             width: MediaQuery.of(context).size.width / 0.2,
@@ -199,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
               children: [
                 Text(
-                  "Time spent on Fun: $timeSpentOnFun min's",
+                  "Time spent on Fun: ${timeSpentOnFun.toStringAsPrecision(3)} min's",
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w900,
@@ -207,19 +205,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Text(
-                  "Time spent on Work: $timeSpentOnWork min's",
+                  "Time spent on Work: ${timeSpentOnWork.toStringAsPrecision(3)} min's",
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w900,
                     fontSize: 25.0,
                   ),
                 ),
-                Text("Last updated: ${data["data"]["lastUpdated"]}"),
+                Text("Last updated: ${data["lastUpdated"]}"),
               ],
             )),
           ),
           SizedBox(height: 10.0),
-          Divider(thickness: 3.0, color: Colors.black,),
+          Divider(
+            thickness: 3.0,
+            color: Colors.black,
+          ),
           SizedBox(height: 10.0),
           Center(
             child: Scrollbar(
