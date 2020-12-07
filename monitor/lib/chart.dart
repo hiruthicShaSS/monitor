@@ -18,14 +18,13 @@ class _PlotterState extends State<Plotter> {
     for (int i = 0; i < widget.apps.length; i++) {
       dataMap[widget.apps[i]] = widget.timeSpent[i];
     }
-    print(dataMap);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Grpah"),
+        title: Text("Graph"),
         centerTitle: true,
       ),
-      body: Container(
+      body: (dataMap.isEmpty) ? Container(child: Text("No data available."),) : Container(
         child: Padding(
           padding: const EdgeInsets.all(1.0),
           child: Container(

@@ -37,7 +37,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   static const String URL = "https://toxic-cat.herokuapp.com/";
-  Map data;
+  Map data = new Map();
   double timeSpentOnWork = 0.0, timeSpentOnFun = 0.0;
 
   List<String> apps = new List();
@@ -191,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Container(
+          (data["code"] == 404) ? Container() : Container(
             color: Colors.red,
             height: MediaQuery.of(context).size.height / 10,
             width: MediaQuery.of(context).size.width / 0.2,
