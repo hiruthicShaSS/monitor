@@ -9,7 +9,6 @@ import 'package:device_info/device_info.dart';
 import 'package:crypto/crypto.dart';
 
 import 'package:monitor/chart.dart';
-import 'package:monitor/chart.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 void main() {
@@ -248,7 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    Plotter(apps: apps, timeSpent: timeSpentappColors: appColors,)),
+                    Plotter(apps: apps, timeSpent: timeSpent, appColors: appColors,)),
           );
         },
         tooltip: 'Plot graph',

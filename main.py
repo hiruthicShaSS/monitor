@@ -23,10 +23,7 @@ appNames = None
 appColors = None
 appIcons = None
 timeout = 0
-<<<<<<< HEAD
 uploadPerEpoch = 1
-=======
->>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
 track = {}
 
 def plot():
@@ -139,7 +136,6 @@ else:
     if not args.no_upload:  # If no objection on upload, login with OAuth
         gauth = GoogleAuth()
         gauth.LocalWebserverAuth()
-<<<<<<< HEAD
 
         drive = GoogleDrive(gauth)
 
@@ -170,28 +166,3 @@ else:
 
 # print(track)
 
-=======
-
-        drive = GoogleDrive(gauth)
-
-    print("Reading data and config...", end=" ")
-    with open("config.json", "r") as file:  # Read the settings from config.json
-        jsonImported = json.loads(file.read())
-        appsToMonitor = jsonImported["monitorApps"]
-        appNames = jsonImported["appNames"]
-        appColors = jsonImported["appColors"]
-        appIcons = jsonImported["appIcons"]
-        timeout = jsonImported["refreshTime"]
-
-    with open("tracking.json", "r") as file:  # Populate existing data is exist
-        try: 
-            track = json.load(file)
-            print("Done.")
-        except: pass
-
-    mon_mod.monitor(track, appsToMonitor, appNames, appIcons, timeout)  # Start monitoring
-    plot()  # Plot it
-
-
-# print(track)
->>>>>>> 923d400a4c17730cc8e7420c1242cf6fac7a0774
