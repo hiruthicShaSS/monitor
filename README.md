@@ -46,4 +46,15 @@ pip install -r requirements.txt
     flutter build apk --release
     ```
 
+## Screenshots
+#### In mobile:
+<img src="img/Screenshot_20201208-174703.jpg" width=200>
+<img src="img/Screenshot_20201208-174714.jpg" width=200>
+
+#### In computer:
+<img src="img/Figure_1.png" width=500>
+
+
+<br>
+
 *Don't mind the commit history, had some issues working with version control*
