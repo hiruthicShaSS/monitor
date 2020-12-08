@@ -38,7 +38,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // static const String URL = "https://toxic-cat.herokuapp.com/";
+  final String URL = "https://drive.google.com/uc?export=download&id=1PHdJYxWWb7SrudjOeIDiDvK-gGE1JPvY"; 
   Map data = new Map();
   double timeSpentOnWork = 0.0, timeSpentOnFun = 0.0;
 
@@ -52,13 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _status = Text("Fetching...");
 
   Future<Map> getData() async {
-    // var response = await http.get('${URL}download?file=tracking.json&pass=sha');
-    // final Map data = jsonDecode(response.body);
-    // // print(data);
-    // return data;
-
-    var response = await http.get(
-        "https://drive.google.com/uc?export=download&id=1PHdJYxWWb7SrudjOeIDiDvK-gGE1JPvY");
+    var response = await http.get(URL);
     final Map data = jsonDecode(response.body);
 
     return data;
