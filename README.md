@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ## Mobile app (Android)
 - Upload the data once to the Google Drive.
 - Get the sharing link and [convert](https://sites.google.com/site/gdocs2direct/home) it to direct download link.
-- Replace the link on the final variable '*URL*' in [main.dart](/monitor/lib/main.dart) in line [41](https://github.com/hiruthic2002/monitor/blob/aeb32770951ccf1b7bbb68b97f2dce69453e6cc3/monitor/lib/main.dart#L41)
+- Replace the link on the final variable '*URL*' in [main.dart](/monitor/lib/main.dart) in line [41](https://github.com/hiruthic2002/monitor/blob/6b6b2ff51d88fea1c0bf35caab936cfc3b839f44/monitor/lib/main.dart#L41)
 - Change the look of the app if you want
 - Compile:
     ```bash
@@ -46,3 +46,4 @@ pip install -r requirements.txt
     flutter build apk --release
     ```
 
+*Don't mind the commit history, had some issues working with version control*
